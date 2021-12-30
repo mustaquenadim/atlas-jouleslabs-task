@@ -15,13 +15,19 @@ export default function CheckoutForm() {
       type: 'card',
       card: elements.getElement(CardElement),
     });
+
+    if (error) {
+      console.log(error);
+    } else {
+      console.log(paymentMethod);
+    }
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <div>
       <CardElement />
-      <button className='bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 focus:outline-none focus:shadow-outline' type='submit' disabled={!stripe || !elements}>
+      <button className='bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 focus:outline-none focus:shadow-outline' type='button' onSubmit={handleSubmit} disabled={!stripe || !elements}>
         Pay
       </button>
-    </form>
+    </div>
   );
 }

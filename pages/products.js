@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Product from '../components/common/Product';
 
-export default function products() {
+export default function Products() {
   const url = 'https://mocki.io/v1/2d76c903-8322-49f9-8c9c-26d344d04dd2';
 
   const [products, setProducts] = useState([]);
