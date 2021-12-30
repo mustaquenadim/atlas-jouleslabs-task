@@ -21,8 +21,8 @@ export default function CheckoutForm() {
       console.log(error);
     } else {
       console.log(paymentMethod);
+      swal('Good job!', 'You payment is successful!', 'success');
     }
-    swal('Good job!', 'You payment is successful!', 'success');
   };
   return (
     <form onSubmit={handleSubmit} className='py-9'>
