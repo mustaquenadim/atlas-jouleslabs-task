@@ -9,7 +9,6 @@ export default function PopularPosts() {
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setPosts(data.slice(0, 6));
       });
   }, [url]);

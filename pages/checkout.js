@@ -3,9 +3,8 @@ import CheckoutForm from '../components/checkout/CheckoutForm';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 
-const stripePromise = loadStripe('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
-
 export default function Checkout() {
+  const stripePromise = loadStripe('pk_test_51IgRFKEvsruORewbiEfYGy0dG4v61lLUtkhUjZ4rpIeRwuuicieovTC8aH6NFX9CYMg8NTeU16lLzlbfuQStEGnn00rR98RkHk');
   const products = useSelector((state) => state.products.productList);
   return (
     <div className='container mx-auto p-8 md:p-24 dark:bg-black'>
@@ -29,7 +28,6 @@ export default function Checkout() {
             ))}
           </tbody>
         </table>
-
         <Elements stripe={stripePromise}>
           <CheckoutForm />
         </Elements>
