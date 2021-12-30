@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Post from '../../components/common/Post';
 
-export default function blogs() {
+export default function Blogs() {
   const API_KEY = '23e29f787dfd4a44b1e723420f807506';
   const url = `https://newsapi.org/v2/everything?q=Apple&from=2021-12-28&sortBy=popularity&apiKey=${API_KEY}`;
   const [posts, setPosts] = useState([]);
