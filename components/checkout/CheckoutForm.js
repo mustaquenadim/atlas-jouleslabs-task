@@ -19,17 +19,23 @@ export default function CheckoutForm() {
 
     if (error) {
       console.log(error);
+      swal('Sorry!', `${error.message}`, 'error');
     } else {
       console.log(paymentMethod);
       swal('Good job!', 'You payment is successful!', 'success');
     }
   };
   return (
-    <form onSubmit={handleSubmit} className='py-9'>
-      <CardElement />
-      <button className='bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 focus:outline-none focus:shadow-outline' type='submit' disabled={!stripe}>
-        Pay
-      </button>
-    </form>
+    <div className='flex items-center justify-center dark:bg-black'>
+      <div className='w-96 text-center border dark:border-gray-800 drop-shadow-xl bg-neutral-100 dark:bg-neutral-900 p-3'>
+        <h3>Payment</h3>
+        <form onSubmit={handleSubmit}>
+          <CardElement />
+          <button className='bg-blue-500 hover:bg-blue-700 text-white my-3 py-2 px-4 focus:outline-none focus:shadow-outline' type='submit' disabled={!stripe}>
+            Pay
+          </button>
+        </form>
+      </div>
+    </div>
   );
 }

@@ -12,7 +12,7 @@ export default function Blogs() {
         console.log(data);
         setPosts(data.slice(0, 20));
       });
-  }, [url]);
+  }, []);
   return (
     <div className='container mx-auto p-8 md:p-24 dark:bg-black'>
       <h3 className='pb-24 text-center text-4xl font-bold dark:text-gray-300'>Blogs</h3>
